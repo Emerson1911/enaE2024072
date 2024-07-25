@@ -27,4 +27,21 @@ public class Calculadora {
         return "calculadora/resta";
     }
 
+    // Multiplicación
+    @GetMapping("/multiplicacion")
+    public String showMulForm(Model model) {
+        model.addAttribute("num1", 0);
+        model.addAttribute("num2", 0);
+        model.addAttribute("result", 0);
+        return "calculadora/multiplicacion";
+    }
+
+    @PostMapping("/multiplicacion")
+    public String performMul(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model) {
+        int result = num1 * num2;
+        model.addAttribute("num1", num1);
+        model.addAttribute("num2", num2);
+        model.addAttribute("result", result);
+        return "calculadora/multiplicacion";
+    }
 }
