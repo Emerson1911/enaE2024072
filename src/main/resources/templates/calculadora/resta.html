@@ -2,14 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <style>
-    .city {
-        border-color: black;
-        border: solid 1px;
-        background-color: aliceblue;
-        position: absolute;
-        top: 5cm;
-        left: 15cm;
-        margin: -25px 0 0 -25px;
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #fff;
+    }
+    .container{
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px;
+        width: 300px;
+        align-items: center;
     }
 </style>
 
@@ -18,20 +24,21 @@
 </head>
 
 <body>
-    <div class="city">
+    <div class="container">
         <!-- <h1>Calculadora</h1> -->
         <h4>Res Calculator</h4>
         <hr>
         <form th:action="@{/calculadora/resta}" method="post">
-            <label for="num1">Number 1:</label>
+            <label for="num1">Number 1:</label><br>
             <input type="number" id="num1" name="num1" th:value="${num1}"><br>
 
-            <label for="num2">Number 2:</label>
+            <label for="num2">Number 2:</label><br>
             <input type="number" id="num2" name="num2" th:value="${num2}"><br>
+            <label for="num2">Resultado:</label><br>
             <input id="result" readonly th:value="${result}"><br>
 
-            <button type="submit">Calcular</button>
-            <button type="button" id="clearButton">Limpiar</button>
+            <button class="but" type="submit">Calcular</button>
+            <button class="but" type="button" id="clearButton">Limpiar</button>
 
         </form>
     </div>
