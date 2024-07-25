@@ -10,21 +10,21 @@ import org.springframework.ui.Model;
 @Controller
 @RequestMapping("/calculadora")
 public class Calculadora {
-    @GetMapping("/restaanae")
+    @GetMapping("/resta")
     public String showResForm(Model model) {
         model.addAttribute("num1", 0);
         model.addAttribute("num2", 0);
         model.addAttribute("result", 0);
-        return "calculadora/restaanae";
+        return "calculadora/resta";
     }
 
-    @PostMapping("/restaanae")
+    @PostMapping("/resta")
     public String performRes(@RequestParam("num1") int num1, @RequestParam("num2") int num2, Model model) {
         int result = num1 - num2;
         model.addAttribute("num1", num1);
         model.addAttribute("num2", num2);
         model.addAttribute("result", result);
-        return "calculadora/restaanae";
+        return "calculadora/resta";
     }
 
 }
