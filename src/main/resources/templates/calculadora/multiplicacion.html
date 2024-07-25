@@ -37,6 +37,13 @@
         border: 1px solid #ccc;
         border-radius: 5px;
     }
+    .calculator-container input[type="result"] {
+        width: calc(100% - 20px);
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
     .calculator-container .button-container {
         display: flex;
@@ -85,7 +92,7 @@
             <label for="num2">Number 2:</label><br>
             <input type="number" id="num2" name="num2" th:value="${num2}"><br>
             <label for="num2">Resultado:</label><br>
-            <input id="result" readonly th:value="${result}"><br>
+            <input type="number" id="result" readonly th:value="${result}"><br>
             <div class="button-container">
                 <button class="but" type="submit">Calcular</button>
                 <button class="but" type="button" id="clearButton">Limpiar</button>
